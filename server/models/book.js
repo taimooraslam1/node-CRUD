@@ -48,5 +48,5 @@ export default (sequelize, DataTypes) => {
       onDelete: "CASCADE",
     });
   };
-  return User;
+  return Book;
 };
