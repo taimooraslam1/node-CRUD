@@ -20,14 +20,14 @@ export default (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: {
           args: false,
-          msg: "Pease input a description",
+          msg: "Please input a description",
         },
       },
       quantity: {
         type: DataTypes.INTEGER,
         allowNull: {
           args: false,
-          msg: "Pease input a quantity",
+          msg: "Please input a quantity",
         },
       },
       userId: {
