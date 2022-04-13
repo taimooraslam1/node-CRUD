@@ -165,6 +165,81 @@
           }
         }
       }
+    },
+    "/api/books": {
+      "get": {
+        "tags": ["Books"],
+        "description": "API route for user to get all books in the database",
+        "responses": {
+          "200": {
+            "description": "All books list get successfully",
+            "schema": {
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
+    "/api/users/{userId}/books": {
+      "post": {
+        "tags": ["Books"],
+        "description": " API route for user to signup",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "Id of the user",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["title", "author", "description", "quantity"],
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "author": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User Signup successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "book": {
+                      "$ref": "#/components/schemas/Books"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ class Users {
       email,
       password,
     }).then((userData) =>
-      res.status(201).send({
+      res.status(200).send({
         success: true,
         message: "User successfully created",
         userData,
